@@ -29,19 +29,19 @@ class NeuralNetwork:
 if __name__ == "__main__":
     iterations = 1000
     training_sets = array([[0,0,1], [1,1,1], [1,0,1], [0,1,1]])
-    training_sets_results = array([0, 1, 1, 0]).T
+    training_sets_results = array([[0, 1, 1, 0]]).T
     data = array([1, 0, 0])
     
     print("Creating neural network")
     neuralnetwork = NeuralNetwork()
-    print("Starting weights are: %s" % neuralnetwork.weights)
+    print("Starting weights are:\n%s" % neuralnetwork.weights)
     
     print("starting training with %d iterations" % iterations)
     neuralnetwork.train(training_sets, training_sets_results, iterations)
     print("training completed!")
-    print("New weights are: %s" % neuralnetwork.weights)
+    print("New weights are:\n%s" % neuralnetwork.weights)
 
-    print("Thinking about new problem: %s" % data)
+    print("Thinking about new problem:\n%s" % data)
     result = neuralnetwork.think(data)
     print("Result: %s" % result)
     
